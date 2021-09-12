@@ -1,6 +1,6 @@
-import { FC } from "react";
-import Highlight, { defaultProps, Language } from "prism-react-renderer";
+import Highlight, { Language, Prism } from "prism-react-renderer";
 import nightOwlLight from 'prism-react-renderer/themes/vsDark';
+import { FC } from "react";
 
 type CodeBlockProps = {
   className: string;
@@ -13,10 +13,8 @@ export const CodeBlock: FC<CodeBlockProps> = ({ children, className }) => {
     return null;
   }
 
-  console.log(defaultProps);
-
   return (
-    <Highlight {...defaultProps} theme={nightOwlLight} code={children.trim()} language={language}>
+    <Highlight Prism={Prism} theme={nightOwlLight} code={children.trim()} language={language}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={className} style={{ ...style, padding: "20px" }}>
           {tokens.map((line, i) => (

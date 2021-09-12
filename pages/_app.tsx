@@ -1,12 +1,12 @@
+import { MDXProvider } from "@mdx-js/react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { MDXProvider } from "@mdx-js/react";
-import "../styles/globals.css";
-import { CodeBlock } from "../components/CodeBlock";
 import { HTMLAttributes } from "react";
+import { CodeBlock } from "../components/CodeBlock";
+import "../styles/globals.css";
 
 const components = {
-  h1: (props: HTMLAttributes<HTMLHeadingElement>) => <h1 style={{color: 'tomato'}} {...props} />,
+  h2: (props: HTMLAttributes<HTMLHeadingElement>) => <h2 style={{color: 'tomato'}} {...props} />,
   pre: (props: HTMLAttributes<HTMLDivElement>) => <div {...props} />,
   code: CodeBlock,
 };

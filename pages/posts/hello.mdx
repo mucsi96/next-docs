@@ -1,6 +1,11 @@
-import { Layout } from '../components/Layout';
+import { Layout } from '../../components/Layout';
 
-# Hello from MDX
+export const meta = {
+  id: 1,
+  title: 'Hello from MDX'
+}
+
+## This is a subtitle
 
 ```tsx
 import { FC } from 'react';
@@ -18,4 +23,4 @@ export const Card: FC<CardProps> = ({ title, paragraph }) => <aside>
 </aside>
 ```
 
-export default ({ children }) => <Layout>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
