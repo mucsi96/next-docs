@@ -2,4 +2,20 @@ import { Layout } from '../components/Layout';
 
 # Hello from MDX
 
+```tsx
+import { FC } from 'react';
+
+type CardProps = {
+  title: string,
+  paragraph: string
+}
+
+export const Card: FC<CardProps> = ({ title, paragraph }) => <aside>
+  <h2>{ title }</h2>
+  <p>
+    { paragraph }
+  </p>
+</aside>
+```
+
 export default ({ children }) => <Layout>{children}</Layout>
