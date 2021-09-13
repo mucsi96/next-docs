@@ -26,11 +26,11 @@ const Home: FC<HomeProps> = ({ posts }) => {
 export default Home;
 
 export async function getStaticProps(): Promise<{ props: HomeProps }> {
-  const postDir = join(process.cwd(), "pages/posts");
+  const postDir = join(process.cwd(), "posts");
   const posts = await promises.readdir(postDir);
 
   const postsMeta = posts.map((post) => {
-    const meta = require(`./posts/${post}`).meta;
+    const meta = require(`../posts/${post}`).meta;
     const name = basename(post, extname(post));
     return { ...meta, path: `/posts/${name}` };
   });
